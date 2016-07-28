@@ -1,0 +1,175 @@
+1,2,3,5
+
+un dev Sr / sprint / 10 dias / 5 puntos
+1 dia / 1 punto
+
+- Layout
+
+	- Menu (time: 1hr)
+		- Navbar
+			- Create-Btns-Styles
+				- AddNew Btn
+				- Trash Btn
+				- Home Btn
+				- Logout Btn
+				- Search
+					- onClick -> replace search icon with input field
+
+		- Logo
+			- Create logo element
+			
+
+	- Product (time: 4hs)
+		- Product-Card-Frontend-view
+			- Creat Title
+			- Create Price
+			- Create Image
+
+		- Product-card-Backend-view
+			- Create Title
+			- Create Price
+			- Create Image
+			- Create Edit Btn
+			- Create Delete Btn
+			- Create Restore Btn
+
+		- Add/Edit-product-view
+			- Create Img-Display
+			- Create Input-load
+			- Create Title label + input
+			- Create Price label + input
+			- Create Description label + text-area
+			- Create Save Btn
+			- Create Cancel Btn
+			- Create Cancel Btn
+
+	- Status-Classes (time: 10min)
+		- Add -> bg green
+		- Delete -> bg red
+		- Restore -> bg blue
+
+	- CatergoriesBtns  (time: 10min)
+		- All
+
+	- FiltersStyles (time: 10min)
+		- All
+
+	- Admin-View (time: 20min)
+		- Create User label + input
+		- Create Password label + input
+		- Create Checkbox Remember me
+		- Create Login Btn
+
+- Routing (time: 1hr)
+		- Navbar
+			- FunctionsBtns
+				- Home
+					- route to /dashboard
+				- AddNew
+					- route to /dashboard/addnew
+				- Trash
+					- route to /dashboard/trash
+				- Logout
+					- route to /admin
+				- cancel
+					- route to /dashboard
+				
+		- Logo
+			- route to /# on mainView
+			- route to /dashboard on adminView
+
+		- Pruduct-home-card
+			- route to /dashboard/#product
+
+- Filters (time: 2hs)
+		- Categories
+			- All -> Filter all
+			- Cat1/Cat2/etc
+				- route to /#
+				- Filter individual Category
+		- A/Z
+		 	- on click toggle order -> First State A to Z
+		- Price
+		 	- on click toggle order -> First State high to low
+		- Date
+		 	- on click toggle order -> First State Old to New
+		- Search
+			- filter input request
+
+- Auth (time: 2hr)
+	- Login
+		- Compare Localstorage to Log = true
+			- TRUE
+				- route to /dashboard
+
+			- FALSE ->
+				- /admin
+
+		- log-form
+			- Login Btn Click
+				- valid form inputs
+					- FALSE
+						- check empty inputs
+							- border red
+
+					- TRUE
+						- check remember me
+							- true -> Save Localstorage Log = true
+							- false -> Save Localstorage Log = false
+						- route to /dashboard
+
+- Product Card Functions (time: 20min)
+	- detail-card
+		- prev-arrow
+			- show prev product
+		- next-arrow
+			- show next product
+
+- Product Btn Functions (time: 4hs)
+	- delete
+		- item bg - to red
+		- active restore btn
+		- hide edit and delete btn
+		- move item to trash obj and remove from original
+	- save 
+		- valid inputs
+					- FALSE
+						- check empty inputs
+							- border red
+
+					- TRUE
+						- change original item data with inputs fields
+						- route to /dashboard
+						- item bg blue
+	- add
+		- valid inputs
+					- FALSE
+						- check empty inputs
+							- border red
+
+					- TRUE
+						- unshift item with inputs data to original
+						- route to /dashboard
+						- item bg green
+
+- lazzy loading (time: 3hs)
+	- desktop
+		- load 8 more items on scroll 
+	- tablet
+		- load 6 more items on scroll
+	- mobile
+		- load 4 more items on scroll
+
+- hardcode (time: 2hs)
+	- API - JSON
+
+- Manual testing (time: 2hs)
+
+- Debugging (time: 4hs)
+
+- Reports (time: 1hs)
+
+- Presentation (time: 1hs)
+
+
+Delivery Date: End of Tuesday 

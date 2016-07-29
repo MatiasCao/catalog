@@ -122,3 +122,52 @@ body {
     border-bottom: 0;
   }
 }
+
+
+/* PRODUCT */
+
+.product-card {
+  width: 300px;
+  border: solid 1px;
+  margin-bottom: 30px;
+}
+
+.product-card:hover {
+  cursor: pointer;
+}
+
+.product-card:hover .product-card-more {
+  display: block;
+}
+
+.product-card-img {
+  width: 100%;
+}
+
+.product-card-title {
+  font-size: 20px;
+  border-top: solid 1px;
+  padding: 8px;
+  margin: 0;
+}
+
+.product-card-price {
+  width: 50px;
+  border: solid 1px;
+  margin: auto;
+  font-weight: 700;
+  position: relative;
+  top: 5px;
+  background: #fff;
+  z-index: 1;
+}
+
+.product-card-more {
+  font-size: 35px;
+  color: #fff;
+  position: absolute;
+  top: 140px;
+  right: 160px;
+  display: none;
+}
+

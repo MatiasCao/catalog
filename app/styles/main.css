@@ -1,10 +1,17 @@
-*{
+* {
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   text-decoration: none !important;
+}
+
+html, body, *, *:before, *:after {
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
 }
 
 .browsehappy {
@@ -23,14 +30,15 @@ body {
 .header,
 .marketing,
 .footer {
-  padding-left: 15px;
-  padding-right: 15px;
+  /*padding-left: 15px;*/
+  /*padding-right: 15px;*/
 }
 
 /* Custom page header */
 .header {
   margin-bottom: 10px;
 }
+
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
   margin-top: 0;
@@ -55,6 +63,7 @@ body {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
 }
+
 .jumbotron .btn {
   font-size: 21px;
   padding: 14px 24px;
@@ -64,29 +73,19 @@ body {
 .marketing {
   margin: 40px 0;
 }
+
 .marketing p + h4 {
   margin-top: 28px;
 }
 
-/* Status Classes*/
-.added{
-  background-color: #dff0d8;
-}
-.deleted{
-  background-color: #f2dede;
-}
-.restored{
-  background-color: #d9edf7;
-}
-
 /* Navbar */
-.header .navbar.navbar-default{
+.header .navbar.navbar-default {
   border: none;
   background-color: #f5f5f5;
   z-index: 99999;
-  -webkit-box-shadow: 0px -2px 40px 9px rgba(0,0,0,0.3);
-  -moz-box-shadow: 0px -2px 40px 9px rgba(0,0,0,0.3);
-  box-shadow: 0px -2px 40px 9px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0px -2px 40px 9px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px -2px 40px 9px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px -2px 40px 9px rgba(0, 0, 0, 0.3);
   border-radius: 0px;
   padding: 10px;
   margin-bottom: 40px;
@@ -96,10 +95,15 @@ body {
   color: #03A9F4;
 }
 
-.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-  color: #0277BD;
-}
+.nav.navbar-nav li a:hover {
+  background-color: transparent;
+  -webkit-transform: scale(1.1, 1.1);;
+  -moz-transform: scale(1.1, 1.1);;
+  -ms-transform: scale(1.1, 1.1);;
+  -o-transform: scale(1.1, 1.1);;
+  transform: scale(1.1, 1.1);;
 
+}
 
 /* PRODUCT */
 
@@ -199,6 +203,56 @@ body {
   cursor: pointer;
 }
 
+/* Dashboard */
+.dashboard-display {
+  padding: 15px;
+}
+
+.dashboard-item {
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 15px;
+  opacity: 0.85;
+}
+
+.dashboard-item:hover {
+  -webkit-transform: scale(1.025, 1.025);
+  -moz-transform: scale(1.025, 1.025);
+  -ms-transform: scale(1.025, 1.025);
+  -o-transform: scale(1.025, 1.025);
+  transform: scale(1.025, 1.025);
+  -webkit-box-shadow:  0 2px 15px rgba(0,0,0,0.4);
+  -moz-box-shadow:  0 2px 15px rgba(0,0,0,0.4);
+  box-shadow:  0 2px 15px rgba(0,0,0,0.4);
+  background-color: #eaeaea;
+}
+
+.dashboard-item .buttons, .dashboard-item .description {
+  margin-top: 1.25%;
+}
+
+.dashboard-item:hover {
+  opacity: 1;
+}
+
+/* Status Classes*/
+.added {
+  background-color: #;
+}
+
+.deleted {
+  background-color: #f2dede;
+}
+
+.restored {
+  background-color: #d9edf7;
+}
+
+/* Buttons */
+.add-button{
+  color: #dff0d8;
+}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
@@ -213,10 +267,12 @@ body {
     padding-left: 0;
     padding-right: 0;
   }
+
   /* Space out the masthead */
   .header {
     margin-bottom: 30px;
   }
+
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;

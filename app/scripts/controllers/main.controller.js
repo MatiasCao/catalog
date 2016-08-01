@@ -8,7 +8,6 @@ angular
 function MainCtrl($scope, $location, productFunctions) {
 
 	productFunctions.getProducts().then(function(response) {
-		console.log('call');
 		$scope.productList = response.data;
 	});
 

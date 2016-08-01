@@ -13,6 +13,10 @@ function DetailCtrl($scope, $location, productFunctions) {
 		$location.path('/')
 	}
 
+	if(!$scope.product) {
+		$scope.goBack();
+	}
+
 	$scope.nextProduct = function() {
 		var lastId = productFunctions.getCurrentProductList().length -1;
 		if($scope.product.id === lastId) {

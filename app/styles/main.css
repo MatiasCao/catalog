@@ -7,6 +7,10 @@
   text-decoration: none !important;
 }
 
+*:focus{
+  outline: none;
+}
+
 html, body, *, *:before, *:after {
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
@@ -289,6 +293,12 @@ body {
 /* Buttons */
 .add-button{
   color: #dff0d8;
+}
+
+/* Filters */
+
+.breadcrumb li{
+  cursor: pointer;
 }
 
 /* Responsive: Portrait tablets and up */

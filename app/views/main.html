@@ -1,37 +1,45 @@
 <div class="collapse navbar-collapse" id="js-navbar-collapse">
   <div class="col-md-6">
-  <ol class="breadcrumb pull-left">
-    <li>All</li>
-    <li><a>Category 1</a></li>
-    <li><a>Category 2</a></li>
-    <li><a>Category 3</a></li>
-    <li><a>Category 4</a></li>
-  </ol>
+    <ol class="breadcrumb pull-left">
+      <li ng-click="propertyName = created; reverse = false">All</li>
+      <li ng-click="showMen('categories')"><a>Men</a></li>
+      <li><a>Women</a></li>
+    </ol>
+    <ol class="breadcrumb pull-left">
+      <li ng-click="propertyName = created; reverse = false">All</li>
+      <li><a>Jackets</a></li>
+      <li><a>Shirts</a></li>
+      <li><a>T-shirts</a></li>
+      <li><a>Pants</a></li>
+      <li><a>Accessories</a></li>
+      <li><a>Packs</a></li>
+    </ol>
   </div>
   <div class="pull-right">
     <ul class="nav navbar-nav">
       <li>
-        <a class="" href="#/"><span class="glyphicon glyphicon-resize-vertical" aria-hidden="true"></span> A / Z</a>
+        <a class="" href="#/" ng-click="sortBy('title')"><span class="glyphicon glyphicon-resize-vertical"
+                                                               aria-hidden="true"></span> A / Z</a>
       </li>
       <li>
-        <a class="" href="#/"><span class="glyphicon glyphicon-resize-vertical" aria-hidden="true"></span> Price</a>
+        <a class="" href="#/" ng-click="sortBy('price')"><span class="glyphicon glyphicon-resize-vertical"
+                                                               aria-hidden="true"></span> Price</a>
       </li>
       <li>
-        <a class="" href="#/"><span class="glyphicon glyphicon-resize-vertical" aria-hidden="true"></span> Date</a>
+        <a class="" href="#/" ng-click="sortBy('created')"><span class="glyphicon glyphicon-resize-vertical"
+                                                                 aria-hidden="true"></span> Date</a>
       </li>
     </ul>
   </div>
 </div>
 
 <div class="row">
-	<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" ng-repeat="product in productList">
-		<div class="product-card text-center center-block" ng-click="viewDetail(product)">
-			<img class="product-card-img img-responsive" ng-src="{{ product.image }}" alt="{{ product.title }}">
-			<span class="product-card-more glyphicon glyphicon-plus"></span>
-			<p class="product-card-price">${{ product.price }}</p>
-			<h2 class="product-card-title">{{ product.title }}</h2>
-		</div>
-	</div>
+  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" ng-repeat="product in productList | orderBy:propertyName:reverse">
+    <div class="product-card text-center center-block" ng-click="viewDetail(product)">
+      <img class="product-card-img img-responsive" ng-src="{{ product.image }}" alt="{{ product.title }}">
+      <span class="product-card-more glyphicon glyphicon-plus"></span>
+      <p class="product-card-price">${{ product.price }}</p>
+      <h2 class="product-card-title">{{ product.title }}</h2>
+    </div>
+  </div>
 </div>
-	
-

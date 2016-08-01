@@ -199,6 +199,16 @@ body {
   cursor: pointer;
 }
 
+.product-edit-img {
+  display: block;
+}
+
+.product-edit-btns button {
+  display: inline-block;
+  margin-top: 0;
+  width: 30%;
+}
+
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

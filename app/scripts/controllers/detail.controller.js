@@ -5,13 +5,11 @@ angular
 	.controller('DetailCtrl', DetailCtrl);
 
 
-function DetailCtrl($scope, productFunctions) {
+function DetailCtrl($scope, $location, productFunctions) {
 
-	productFunctions.getProducts().then(function(response) {
-		$scope.productList = response.data;
-	});
+	$scope.product = productFunctions.getProductDetail();
 
-	console.log($scope.test);
-
-
+	$scope.goBack = function() {
+		$location.path('/')
+	}
 };

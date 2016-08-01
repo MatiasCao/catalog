@@ -41,7 +41,6 @@ function productFunctions($http) {
 
 	function setProductDetail(product) {
 		productDetail = product;
-		console.log(productDetail)
 	}
 
 	function getProductDetail() {

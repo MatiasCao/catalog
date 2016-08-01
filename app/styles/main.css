@@ -203,6 +203,33 @@ body {
   cursor: pointer;
 }
 
+.product-edit {
+  padding: 0 30px;
+}
+
+.product-edit-img {
+  display: block;
+}
+
+.product-edit-btns {
+  margin-top: 40px;
+}
+
+.product-edit-btns button {
+  display: inline-block;
+  margin-top: 0;
+  width: 20%;
+  padding: 12px;
+}
+
+.product-edit-load-btn {
+  margin: 12px 0 24px 0;
+}
+
+.product-edit-price {
+  width: 40%;
+}
+
 /* Dashboard */
 .dashboard-display {
   padding: 15px;

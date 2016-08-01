@@ -6,16 +6,23 @@ productFunctions.$inject = ['$http'];
 
 function productFunctions($http) {
 	var productDetail;
+	var currentProductList;
+
+	$http.get('../../data/original.json').then(function(response) {
+		currentProductList = response.data;
+	});
 
 	var services = {
-			getProducts: getProducts,
-			getTrash: getTrash,
-			addProduct: addProduct,
-			editProduct: editProduct,
-			deleteProduct: deleteProduct,
-			restoreProduct: restoreProduct,
-			setProductDetail: setProductDetail,
-			getProductDetail: getProductDetail
+		getProducts: getProducts,
+		getTrash: getTrash,
+		addProduct: addProduct,
+		editProduct: editProduct,
+		deleteProduct: deleteProduct,
+		restoreProduct: restoreProduct,
+		setProductDetail: setProductDetail,
+		getProductDetail: getProductDetail,
+		getCurrentProductList: getCurrentProductList,
+		getProductById: getProductById
 	};
 	return services;
 
@@ -41,11 +48,22 @@ function productFunctions($http) {
 
 	function setProductDetail(product) {
 		productDetail = product;
-		console.log(productDetail)
 	}
 
 	function getProductDetail() {
 		return productDetail;
+	}
+
+	function getCurrentProductList() {
+		return currentProductList;
+	}
+
+	function getProductById(searchedId) {
+		for(var i = 0; i < currentProductList.length; i++) {
+			if(currentProductList[i].id === searchedId) {
+				return currentProductList[i];
+			}
+		}
 	}
 }
 

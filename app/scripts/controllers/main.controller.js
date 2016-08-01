@@ -5,14 +5,14 @@ angular
 	.controller('MainCtrl', MainCtrl);
 
 
-function MainCtrl($scope, productFunctions) {
+function MainCtrl($scope, $location, productFunctions) {
 
 	productFunctions.getProducts().then(function(response) {
 		$scope.productList = response.data;
 	});
 
-	$scope.test = 'test';
-
-	//$scope.viewDetail(product) = productFunctions.setProductDetail(product);
-
+	$scope.viewDetail = function(product) {
+		productFunctions.setProductDetail(product);
+		$location.path('/product-detail');
+	};
 };

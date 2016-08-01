@@ -23,117 +23,15 @@
   </div>
 </div>
 
-<div class="jumbotron">
-  <h1>Landing</h1>
-  <a ng-href="#/product-detail">Detail</a>
-</div>
-
 <div class="row">
-	<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+	<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" ng-repeat="product in productList">
 		<div class="product-card text-center center-block">
-			<img class="product-card-img img-responsive" src="../images/Down-Sweater-Jacket.jpg" alt="">
+			<img class="product-card-img img-responsive" ng-src="{{ product.image }}" alt="{{ product.title }}">
 			<span class="product-card-more glyphicon glyphicon-plus"></span>
-			<p class="product-card-price">$229</p>
-			<h2 class="product-card-title">Down Sweater Jacket</h2>
+			<p class="product-card-price">${{ product.price }}</p>
+			<h2 class="product-card-title">{{ product.title }}</h2>
 		</div>
 	</div>
-
-	<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-		<div class="product-card text-center center-block">
-			<img class="product-card-img img-responsive" src="../images/Down-Sweater-Jacket.jpg" alt="">
-			<span class="product-card-more glyphicon glyphicon-plus"></span>
-			<p class="product-card-price">$229</p>
-			<h2 class="product-card-title">Down Sweater Jacket</h2>
-		</div>
-	</div>
-
-	<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-		<div class="product-card text-center center-block">
-			<img class="product-card-img img-responsive" src="../images/Down-Sweater-Jacket.jpg" alt="">
-			<span class="product-card-more glyphicon glyphicon-plus"></span>
-			<p class="product-card-price">$229</p>
-			<h2 class="product-card-title">Down Sweater Jacket</h2>
-		</div>
-	</div>
-
-	<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-		<div class="product-card text-center center-block">
-			<img class="product-card-img img-responsive" src="../images/Down-Sweater-Jacket.jpg" alt="">
-			<span class="product-card-more glyphicon glyphicon-plus"></span>
-			<p class="product-card-price">$229</p>
-			<h2 class="product-card-title">Down Sweater Jacket</h2>
-		</div>
-	</div>
-
-	<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-		<div class="product-card text-center center-block">
-			<img class="product-card-img img-responsive" src="../images/Down-Sweater-Jacket.jpg" alt="">
-			<span class="product-card-more glyphicon glyphicon-plus"></span>
-			<p class="product-card-price">$229</p>
-			<h2 class="product-card-title">Down Sweater Jacket</h2>
-		</div>
-	</div>
-
-	<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-		<div class="product-card text-center center-block">
-			<img class="product-card-img img-responsive" src="../images/Down-Sweater-Jacket.jpg" alt="">
-			<span class="product-card-more glyphicon glyphicon-plus"></span>
-			<p class="product-card-price">$229</p>
-			<h2 class="product-card-title">Down Sweater Jacket</h2>
-		</div>
-	</div>
-
-	<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-		<div class="product-card text-center center-block">
-			<img class="product-card-img img-responsive" src="../images/Down-Sweater-Jacket.jpg" alt="">
-			<span class="product-card-more glyphicon glyphicon-plus"></span>
-			<p class="product-card-price">$229</p>
-			<h2 class="product-card-title">Down Sweater Jacket</h2>
-		</div>
-	</div>
-
-	<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-		<div class="product-card text-center center-block">
-			<img class="product-card-img img-responsive" src="../images/Down-Sweater-Jacket.jpg" alt="">
-			<span class="product-card-more glyphicon glyphicon-plus"></span>
-			<p class="product-card-price">$229</p>
-			<h2 class="product-card-title">Down Sweater Jacket</h2>
-		</div>
-	</div>
-
-	<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-		<div class="product-card text-center center-block">
-			<img class="product-card-img img-responsive" src="../images/Down-Sweater-Jacket.jpg" alt="">
-			<span class="product-card-more glyphicon glyphicon-plus"></span>
-			<p class="product-card-price">$229</p>
-			<h2 class="product-card-title">Down Sweater Jacket</h2>
-		</div>
-	</div>
-
-	<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-		<div class="product-card text-center center-block">
-			<img class="product-card-img img-responsive" src="../images/Down-Sweater-Jacket.jpg" alt="">
-			<span class="product-card-more glyphicon glyphicon-plus"></span>
-			<p class="product-card-price">$229</p>
-			<h2 class="product-card-title">Down Sweater Jacket</h2>
-		</div>
-	</div>
-
-	<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-		<div class="product-card text-center center-block">
-			<img class="product-card-img img-responsive" src="../images/Down-Sweater-Jacket.jpg" alt="">
-			<span class="product-card-more glyphicon glyphicon-plus"></span>
-			<p class="product-card-price">$229</p>
-			<h2 class="product-card-title">Down Sweater Jacket</h2>
-		</div>
-	</div>
-
-	<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-		<div class="product-card text-center center-block">
-			<img class="product-card-img img-responsive" src="../images/Down-Sweater-Jacket.jpg" alt="">
-			<span class="product-card-more glyphicon glyphicon-plus"></span>
-			<p class="product-card-price">$229</p>
-			<h2 class="product-card-title">Down Sweater Jacket</h2>
-		</div>
-	</div>
+</div>
+	
 

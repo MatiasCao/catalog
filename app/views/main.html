@@ -25,7 +25,7 @@
 
 <div class="row">
 	<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" ng-repeat="product in productList">
-		<div class="product-card text-center center-block">
+		<div class="product-card text-center center-block" ng-click="viewDetail(product)">
 			<img class="product-card-img img-responsive" ng-src="{{ product.image }}" alt="{{ product.title }}">
 			<span class="product-card-more glyphicon glyphicon-plus"></span>
 			<p class="product-card-price">${{ product.price }}</p>

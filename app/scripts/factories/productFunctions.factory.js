@@ -5,6 +5,8 @@ angular
 productFunctions.$inject = ['$http'];
 
 function productFunctions($http) {
+	var productDetail;
+
 	var services = {
 			getProducts: getProducts,
 			getTrash: getTrash,
@@ -12,6 +14,8 @@ function productFunctions($http) {
 			editProduct: editProduct,
 			deleteProduct: deleteProduct,
 			restoreProduct: restoreProduct,
+			setProductDetail: setProductDetail,
+			getProductDetail: getProductDetail
 	};
 	return services;
 
@@ -33,6 +37,15 @@ function productFunctions($http) {
 	}
 
 	function restoreProduct(){
-	}	
+	}
+
+	function setProductDetail(product) {
+		productDetail = product;
+		console.log(productDetail)
+	}
+
+	function getProductDetail() {
+		return productDetail;
+	}
 }
 

@@ -27,7 +27,7 @@ angular
       })
       .when('/product-detail', {
         templateUrl: 'views/product-detail.html',
-        controller: 'MainCtrl',
+        controller: 'DetailCtrl',
         controllerAs: 'main'
       })
       .when('/admin', {

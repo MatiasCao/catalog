@@ -2,11 +2,11 @@ angular
 	.module('catalogApp')
 	.factory('productFunctions', productFunctions);
 
-productFunctions.$inject = ['$http'];
+productFunctions.$inject = ['$http', '$q'];
 
-function productFunctions($http) {
+function productFunctions($http, $q) {
 	var productDetail;
-	var currentProductList;
+	var currentProductList = getProducts();
 
 	$http.get('../../data/original.json').then(function(response) {
 		currentProductList = response.data;
@@ -31,7 +31,7 @@ function productFunctions($http) {
 	}
 
 	function getTrash() {
-	 	return $http.get('../../data/trashed.json');
+	 	
 	}
 
 	function addProduct(){
@@ -55,7 +55,9 @@ function productFunctions($http) {
 	}
 
 	function getCurrentProductList() {
-		return currentProductList;
+		return $q.when(currentProductList).then(function(response) {
+			return response.data || currentProductList;
+		});
 	}
 
 	function getProductById(searchedId) {

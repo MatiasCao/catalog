@@ -7,9 +7,9 @@ angular
 
 function MainCtrl($scope, $location, productFunctions) {
 
-	productFunctions.getProducts().then(function(response) {
-		$scope.productList = response.data;
-	});
+	productFunctions.getCurrentProductList().then(function(response) {
+		$scope.productList = response;
+	})
 
   $scope.reverse = false;
   $scope.sortBy = function(propertyName){

@@ -16,7 +16,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'LocalStorageModule'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -32,7 +33,7 @@ angular
       })
       .when('/admin', {
         templateUrl: 'views/admin.html',
-        controller: 'MainCtrl',
+        controller: 'AdminCtrl',
         controllerAs: 'main'
       })
       .when('/dashboard', {
@@ -58,4 +59,7 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+.config(['localStorageServiceProvider', function (localStorageServiceProvider) {
+  localStorageServiceProvider.setPrefix('catalog');
+}]);

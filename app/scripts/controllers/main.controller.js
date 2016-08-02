@@ -12,7 +12,7 @@ function MainCtrl($scope, $location, productFunctions) {
 	});
 
   $scope.reverse = false;
-  $scope.sortBy = function(propertyName){
+  $scope.sortBy = function(propertyName) {
     $scope.reverse = ($scope.propertyName === propertyName) ? !$scope.reverse : true;
     $scope.propertyName = propertyName;
   };
@@ -21,5 +21,14 @@ function MainCtrl($scope, $location, productFunctions) {
 		productFunctions.setProductDetail(product);
 		$location.path('/product-detail');
 	};
+
+  $scope.viewDetail = function(product) {
+    productFunctions.setProductDetail(product);
+    $location.path('/product-detail');
+
+
+  };
 };
 
+//- ng-show="user.hide"
+//- user.hide = false

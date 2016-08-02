@@ -7,15 +7,17 @@ angular
 
 function MainCtrl($scope, $location, productFunctions) {
 
+	$scope.productList;
+
 	productFunctions.getCurrentProductList().then(function(response) {
 		$scope.productList = response;
 	})
 
-  $scope.reverse = false;
-  $scope.sortBy = function(propertyName){
-    $scope.reverse = ($scope.propertyName === propertyName) ? !$scope.reverse : true;
-    $scope.propertyName = propertyName;
-  };
+	$scope.reverse = false;
+	$scope.sortBy = function(propertyName){
+	$scope.reverse = ($scope.propertyName === propertyName) ? !$scope.reverse : true;
+	$scope.propertyName = propertyName;
+	};
 
 	$scope.viewDetail = function(product) {
 		productFunctions.setProductDetail(product);

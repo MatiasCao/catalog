@@ -37,8 +37,8 @@ angular
       })
       .when('/dashboard', {
         templateUrl: 'views/dashboard.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
+        controller: 'DashboardCtrl',
+        controllerAs: 'dashboard'
       })
       .when('/dashboard/add', {
         templateUrl: 'views/dashboard/add.html',
@@ -47,8 +47,8 @@ angular
       })
       .when('/dashboard/edit', {
         templateUrl: 'views/dashboard/edit.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
+        controller: 'EditCtrl',
+        controllerAs: 'edit'
       })
       .when('/dashboard/trash', {
         templateUrl: 'views/dashboard/trash.html',

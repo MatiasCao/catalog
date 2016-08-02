@@ -187,6 +187,7 @@ body {
 }
 .product-edit-img {
   display: block;
+  width: 250px;
 }
 .product-edit-btns {
   margin-top: 40px;

@@ -26,6 +26,3 @@ function MainCtrl($scope, $location, productFunctions) {
 
   };
 };
-
-//- ng-show="user.hide"
-//- user.hide = false

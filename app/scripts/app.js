@@ -53,7 +53,7 @@ angular
       })
       .when('/dashboard/trash', {
         templateUrl: 'views/dashboard/trash.html',
-        controller: 'MainCtrl',
+        controller: 'TrashCtrl',
         controllerAs: 'main'
       })
       .otherwise({

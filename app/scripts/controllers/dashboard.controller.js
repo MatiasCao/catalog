@@ -16,6 +16,11 @@ function DashboardCtrl($scope, $location, productFunctions, localStorageService)
     productFunctions.removeProduct(productId);
   }
 
+  $scope.restoreProduct = function (productId) {
+    $scope.removedProduct = false;
+    productFunctions.restoreProduct(productId);
+  }
+
   $scope.editProduct = function (product) {
     productFunctions.setProductDetail(product);
     $location.path('/dashboard/edit');
@@ -25,4 +30,5 @@ function DashboardCtrl($scope, $location, productFunctions, localStorageService)
     $location.path('/admin');
     localStorageService.remove('logStatus');
   }
+
 }

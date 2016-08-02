@@ -1,76 +1,93 @@
 angular
-	.module('catalogApp')
-	.factory('productFunctions', productFunctions);
+.module('catalogApp')
+.factory('productFunctions', productFunctions);
 
 productFunctions.$inject = ['$http', '$q'];
 
 function productFunctions($http, $q) {
-	var productDetail;
-	var currentProductList = getProducts();
+  var productDetail;
+  var currentProductList = getProducts();
+  var trashedProducts = [];
 
-	$http.get('../../data/original.json').then(function(response) {
-		currentProductList = response.data;
-	});
+  $http.get('../../data/original.json').then(function (response) {
+    currentProductList = response.data;
+  });
 
-	var services = {
-		getProducts: getProducts,
-		getTrash: getTrash,
-		addProduct: addProduct,
-		editProduct: editProduct,
-		removeProduct: removeProduct,
-		restoreProduct: restoreProduct,
-		setProductDetail: setProductDetail,
-		getProductDetail: getProductDetail,
-		getCurrentProductList: getCurrentProductList,
-		getProductById: getProductById
-	};
-	return services;
+  var services = {
+    getProducts: getProducts,
+    getTrash: getTrash,
+    addProduct: addProduct,
+    editProduct: editProduct,
+    removeProduct: removeProduct,
+    restoreProduct: restoreProduct,
+    setProductDetail: setProductDetail,
+    getProductDetail: getProductDetail,
+    getCurrentProductList: getCurrentProductList,
+    getProductById: getProductById,
+    getTrashedProducts: getTrashedProduct
+  };
 
-	function getProducts() {
-		return $http.get('../../data/original.json');
-	}
+  return services;
 
-	function getTrash() {
-	 	
-	}
+  function getProducts() {
+    return $http.get('../../data/original.json');
+  }
 
-	function addProduct(){
-	}
+  function getTrash() {
 
-	function editProduct(){
-	}
+  }
 
-	function removeProduct(productId) {
-		for(var i = 0; i < currentProductList.length; i++) {
-			if(currentProductList[i].id === productId) {
-				currentProductList.splice(i, 1);
-			}
-		}
-	}
+  function addProduct() {
+  }
 
-	function restoreProduct(){
-	}
+  function editProduct() {
+  }
 
-	function setProductDetail(product) {
-		productDetail = product;
-	}
+  function removeProduct(productId) {
+    for (var i = 0; i < currentProductList.length; i++) {
+      if (currentProductList[i].id === productId) {
+        var deleted = currentProductList.splice(i, 1);
+        trashedProducts.push(deleted);
+        console.log(trashedProducts);
+      }
+    }
+  }
 
-	function getProductDetail() {
-		return productDetail;
-	}
+  function restoreProduct(productId) {
+    for (var i = 0; i < trashedProducts.length; i++) {
+      if (trashedProducts[i].id === productId) {
+        var restored = trashedProducts.splice(i, 1);
+        currentProductList.unshift(restored);
+        console.log(trashedProducts);
+      }
+    }
+  }
 
-	function getCurrentProductList() {
-		return $q.when(currentProductList).then(function(response) {
-			return response.data || currentProductList;
-		});
-	}
+  function setProductDetail(product) {
+    productDetail = product;
+  }
 
-	function getProductById(productId) {
-		for(var i = 0; i < currentProductList.length; i++) {
-			if(currentProductList[i].id === productId) {
-				return currentProductList[i];
-			}
-		}
-	}
+  function getProductDetail() {
+    return productDetail;
+  }
+
+  function getCurrentProductList() {
+    return $q.when(currentProductList).then(function (response) {
+      return response.data || currentProductList;
+    });
+  }
+
+  function getTrashedProduct() {
+      return trashedProducts;
+  }
+
+  function getProductById(productId) {
+    for (var i = 0; i < currentProductList.length; i++) {
+      if (currentProductList[i].id === productId) {
+        return currentProductList[i];
+      }
+    }
+  }
+
 }
 

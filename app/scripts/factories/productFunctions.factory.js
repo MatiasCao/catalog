@@ -5,6 +5,7 @@ angular
 productFunctions.$inject = ['$http', '$q'];
 
 function productFunctions($http, $q) {
+
   var productDetail;
   var currentProductList = getProducts();
   var trashedProducts = [];
@@ -40,8 +41,14 @@ function productFunctions($http, $q) {
   function addProduct() {
   }
 
-  function editProduct() {
+  function editProduct(product){
+    for(var i = 0; i < currentProductList.length; i++) {
+      if(currentProductList[i].id === product.id) {
+        currentProductList[i] = product;
+      }
+    }
   }
+
 
   function removeProduct(productId) {
     for (var i = 0; i < currentProductList.length; i++) {
@@ -88,6 +95,5 @@ function productFunctions($http, $q) {
       }
     }
   }
-
 }
 

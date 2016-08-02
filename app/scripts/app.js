@@ -43,8 +43,8 @@ angular
       })
       .when('/dashboard/add', {
         templateUrl: 'views/dashboard/add.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
+        controller: 'AddCtrl',
+        controllerAs: 'add'
       })
       .when('/dashboard/edit', {
         templateUrl: 'views/dashboard/edit.html',

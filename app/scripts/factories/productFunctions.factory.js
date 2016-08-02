@@ -37,7 +37,12 @@ function productFunctions($http, $q) {
 	function addProduct(){
 	}
 
-	function editProduct(){
+	function editProduct(product){
+		for(var i = 0; i < currentProductList.length; i++) {
+			if(currentProductList[i].id === product.id) {
+				currentProductList[i] = product;
+			}
+		}
 	}
 
 	function removeProduct(productId) {

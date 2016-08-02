@@ -2,19 +2,14 @@
 
 angular
 	.module('catalogApp')
-	.controller('EditCtrl', EditCtrl);
+	.controller('AddCtrl', AddCtrl);
 
 
-function EditCtrl($scope, $location, productFunctions) {
-	$scope.product = productFunctions.getProductDetail();
-
-	$scope.goBack = function() {
-		$location.path('/dashboard');
-	}
-
-	if(!$scope.product) {
-		$scope.goBack();
-	}
+function AddCtrl($scope, $location, productFunctions) {
+	$scope.product = {
+		title: "",
+		price: ""
+	};
 
 	$scope.checkCategory = function(category) {
 		var categories = $scope.product.categories;

@@ -1,18 +1,18 @@
-<div class="collapse navbar-collapse" id="js-navbar-collapse">
+<div class=" navbar-collapse" id="js-navbar-collapse">
   <div class="col-md-6">
-    <ol class="breadcrumb pull-left">
-      <li ng-click="propertyName = created; reverse = false">All</li>
-      <li ng-click="showMen('categories')"><a>Men</a></li>
-      <li><a>Women</a></li>
+    <ol class="breadcrumb pull-left gender-filter">
+      <li ng-click="filterItemsBy('all')" >All</li>
+      <li ng-click="filterItemsBy('men')"><a>Men</a></li>
+      <li ng-click="filterItemsBy('women')"><a>Women</a></li>
     </ol>
-    <ol class="breadcrumb pull-left">
-      <li ng-click="propertyName = created; reverse = false">All</li>
-      <li><a>Jackets</a></li>
-      <li><a>Shirts</a></li>
-      <li><a>T-shirts</a></li>
-      <li><a>Pants</a></li>
-      <li><a>Accessories</a></li>
-      <li><a>Packs</a></li>
+    <ol class="breadcrumb pull-left category-filter">
+      <li ng-click="filterItemsBy('all')">All</li>
+      <li ng-click="filterItemsBy('jackets')"><a>Jackets</a></li>
+      <li  ng-click="filterItemsBy('shirts')"><a>Shirts</a></li>
+      <li  ng-click="filterItemsBy('t-shirts')"><a>T-shirts</a></li>
+      <li  ng-click="filterItemsBy('pants')"><a>Pants</a></li>
+      <li  ng-click="filterItemsBy('accessories')"><a>Accessories</a></li>
+      <li  ng-click="filterItemsBy('packs')"><a>Packs</a></li>
     </ol>
   </div>
   <div class="pull-right">
@@ -34,7 +34,8 @@
 </div>
 
 <div class="row">
-  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" ng-repeat="product in productList | orderBy:propertyName:reverse | filter:searchProducts ">
+  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12"
+       ng-repeat="product in productList | orderBy:propertyName:reverse | filter:searchProducts ">
     <div class="product-card text-center center-block" ng-click="viewDetail(product)">
       <img class="product-card-img img-responsive" ng-src="{{ product.image }}" alt="{{ product.title }}">
       <span class="product-card-more glyphicon glyphicon-plus"></span>

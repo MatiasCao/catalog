@@ -9,6 +9,7 @@ function AddCtrl($scope, $location, productFunctions, localStorageService) {
   var userLog = localStorageService.get('logStatus');
   if (userLog) {
 
+    $scope.navbarPath = productFunctions.changePath($location);
     $scope.product = {
 		id: productFunctions.getNewProductId(),
 		created: new Date().toJSON(),

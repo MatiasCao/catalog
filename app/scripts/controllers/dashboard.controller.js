@@ -32,8 +32,8 @@ function DashboardCtrl($scope, $location, productFunctions, localStorageService)
     }
 
     $scope.logOut = function () {
-      $location.path('/admin');
       localStorageService.remove('logStatus');
+      $location.path('/admin');
     }
   } else {
     $location.path('/admin');

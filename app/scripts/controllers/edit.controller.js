@@ -10,7 +10,6 @@ function EditCtrl($scope, $location, productFunctions, localStorageService) {
   if (userLog) {
 
     $scope.product = productFunctions.getProductDetail();
-
 	$scope.goBack = function() {
 		$location.path('/dashboard');
 	}

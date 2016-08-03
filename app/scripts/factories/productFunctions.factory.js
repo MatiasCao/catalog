@@ -35,12 +35,12 @@ function productFunctions($http, $q) {
   }
 
   function addProduct(product) {
-  	currentProductList.unshift(product);
+    currentProductList.unshift(product);
   }
 
-  function editProduct(product){
-    for(var i = 0; i < currentProductList.length; i++) {
-      if(currentProductList[i].id === product.id) {
+  function editProduct(product) {
+    for (var i = 0; i < currentProductList.length; i++) {
+      if (currentProductList[i].id === product.id) {
         currentProductList[i] = product;
       }
     }
@@ -82,7 +82,7 @@ function productFunctions($http, $q) {
   }
 
   function getTrashedProduct() {
-      return trashedProducts;
+    return trashedProducts;
   }
 
   function getProductById(productId) {
@@ -94,13 +94,13 @@ function productFunctions($http, $q) {
   }
 
   function getNewProductId() {
-  	var max = 0;
-  	for (var i = 0; i < currentProductList.length; i++) {
-  		if(currentProductList[i].id > max) {
-  			max = currentProductList[i].id;
-  		}
-  	}
-  	return max + 1;
+    var max = 0;
+    for (var i = 0; i < currentProductList.length; i++) {
+      if (currentProductList[i].id > max) {
+        max = currentProductList[i].id;
+      }
+    }
+    return max + 1;
   }
 }
 

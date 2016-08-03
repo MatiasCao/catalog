@@ -15,9 +15,9 @@ function AdminCtrl($scope, $location, localStorageService) {
       } else {
         if (user.name === 'root' && user.password === 'root') {
           console.log(user.keeplog);
-          if (user.keeplog) {
+         // if (user.keeplog) {
             localStorageService.set('logStatus', true);
-          }
+          //}
           $location.path('/dashboard');
         } else {
           $scope.enterData = true;

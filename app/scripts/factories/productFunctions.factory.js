@@ -53,7 +53,8 @@ function productFunctions($http, $q) {
   function removeProduct(productId) {
     for (var i = 0; i < currentProductList.length; i++) {
       if (currentProductList[i].id === productId) {
-        var deleted = currentProductList.splice(i, 1);
+        var deleted = currentProductList[i];
+        currentProductList.splice(i, 1);
         trashedProducts.push(deleted);
         console.log(trashedProducts);
       }
@@ -63,7 +64,8 @@ function productFunctions($http, $q) {
   function restoreProduct(productId) {
     for (var i = 0; i < trashedProducts.length; i++) {
       if (trashedProducts[i].id === productId) {
-        var restored = trashedProducts.splice(i, 1);
+        var restored = trashedProducts[i];
+        trashedProducts.splice(i, 1);
         currentProductList.unshift(restored);
         console.log(trashedProducts);
       }

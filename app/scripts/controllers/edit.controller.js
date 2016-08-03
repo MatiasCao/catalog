@@ -5,30 +5,37 @@ angular
 	.controller('EditCtrl', EditCtrl);
 
 
-function EditCtrl($scope, $location, productFunctions) {
-	$scope.product = productFunctions.getProductDetail();
-  console.log($scope.product);
+function EditCtrl($scope, $location, productFunctions, localStorageService) {
 
-	$scope.goBack = function() {
-		$location.path('/dashboard');
-	}
+  var userLog = localStorageService.get('logStatus');
+  if (userLog) {
 
-	if(!$scope.product) {
-		$scope.goBack();
-	}
+    $scope.product = productFunctions.getProductDetail();
+    console.log($scope.product);
 
-	$scope.checkCategory = function(category) {
-		var categories = $scope.product.categories;
-		for(var i = 0; i < categories.length; i++) {
-			if(categories[i] === category) {
-				return true;
-			}
-		}
-	}
+    $scope.goBack = function () {
+      $location.path('/dashboard');
+    }
 
-	$scope.saveProduct = function() {
-		console.log($scope.product);
-		productFunctions.editProduct($scope.product);
-		$scope.goBack();
-	}
+    if (!$scope.product) {
+      $scope.goBack();
+    }
+
+    $scope.checkCategory = function (category) {
+      var categories = $scope.product.categories;
+      for (var i = 0; i < categories.length; i++) {
+        if (categories[i] === category) {
+          return true;
+        }
+      }
+    }
+
+    $scope.saveProduct = function () {
+      console.log($scope.product);
+      productFunctions.editProduct($scope.product);
+      $scope.goBack();
+    }
+  } else {
+    $location.path('/admin');
+  }
 }

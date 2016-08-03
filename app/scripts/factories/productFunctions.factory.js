@@ -24,7 +24,8 @@ function productFunctions($http, $q) {
     getProductDetail: getProductDetail,
     getCurrentProductList: getCurrentProductList,
     getProductById: getProductById,
-    getTrashedProducts: getTrashedProduct
+    getTrashedProducts: getTrashedProduct,
+    getNewProductId: getNewProductId
   };
 
   return services;
@@ -33,7 +34,8 @@ function productFunctions($http, $q) {
     return $http.get('../../data/original.json');
   }
 
-  function addProduct() {
+  function addProduct(product) {
+  	currentProductList.unshift(product);
   }
 
   function editProduct(product){
@@ -89,6 +91,16 @@ function productFunctions($http, $q) {
         return currentProductList[i];
       }
     }
+  }
+
+  function getNewProductId() {
+  	var max = 0;
+  	for (var i = 0; i < currentProductList.length; i++) {
+  		if(currentProductList[i].id > max) {
+  			max = currentProductList[i].id;
+  		}
+  	}
+  	return max + 1;
   }
 }
 

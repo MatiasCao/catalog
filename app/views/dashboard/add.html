@@ -83,31 +83,31 @@
 
       <div class="form-group">
         <label class="checkbox-inline">
-          <input type="checkbox" value="men" ng-checked="checkCategory('men')"> Men
+          <input type="checkbox" value="men" ng-model="categories.men"> Men
         </label>
         <label class="checkbox-inline">
-          <input type="checkbox" id="" value="women" ng-checked="checkCategory('women')"> Women
+          <input type="checkbox" id="" value="women" ng-model="categories.women"> Women
         </label>
       </div>
 
       <div class="form-group">
         <label class="checkbox-inline">
-          <input type="checkbox" value="jackets" ng-checked="checkCategory('jackets')"> Jackets
+          <input type="checkbox" value="jackets" ng-model="categories.jackets"> Jackets
         </label>
         <label class="checkbox-inline">
-          <input type="checkbox" id="" value="t-shirts" ng-checked="checkCategory('t-shirts')"> T-Shirts
+          <input type="checkbox" id="" value="t-shirts" ng-model="categories[t-shirts]"> T-Shirts
         </label>
         <label class="checkbox-inline">
-          <input type="checkbox" value="shirts" ng-checked="checkCategory('shirts')"> Shirts
+          <input type="checkbox" value="shirts" ng-model="categories.shirts"> Shirts
         </label>
         <label class="checkbox-inline">
-          <input type="checkbox" id="" value="pants" ng-checked="checkCategory('pants')"> Pants
+          <input type="checkbox" id="" value="pants" ng-model="categories.pants"> Pants
         </label>
         <label class="checkbox-inline">
-          <input type="checkbox" value="accessories" ng-checked="checkCategory('accessories')"> Accessories
+          <input type="checkbox" value="accessories" ng-model="categories.accessories"> Accessories
         </label>
         <label class="checkbox-inline">
-          <input type="checkbox" id="" value="packs" ng-checked="checkCategory('packs')"> Packs
+          <input type="checkbox" id="" value="packs" ng-model="categories.packs"> Packs
         </label>
       </div>
     </div>
@@ -134,10 +134,10 @@
 
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <div class="product-edit-btns form-group text-center">
-        <button type="submit" class="btn btn-primary" ng-click="saveProduct()"><span class="glyphicon glyphicon-ok
-"></span> Save</button>
+        <button type="submit" class="btn btn-success" ng-click="addProduct()"><span class="glyphicon glyphicon-plus
+"></span> Add</button>
         <button type="button" class="btn btn-danger" ng-click="goBack()"><span class="glyphicon glyphicon-remove
-"></span> CANCEL</button>
+"></span> Cancel</button>
       </div>
     </div>
   </div>

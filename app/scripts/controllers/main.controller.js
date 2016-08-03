@@ -8,6 +8,8 @@ angular
 function MainCtrl($scope, $location, productFunctions) {
 
 	$scope.productList;
+	$scope.productsToShow = [];
+	var lastLoaded = 0;
 
 	productFunctions.getCurrentProductList().then(function(response) {
 		$scope.productList = response;
@@ -23,5 +25,21 @@ function MainCtrl($scope, $location, productFunctions) {
     productFunctions.setProductDetail(product);
     $location.path('/product-detail');
 
+  };
+
+  $scope.loadMore = function() {
+  	var last = $scope.productList.length - 1;
+  	var quantityToLoad = 8;
+
+  	if(quantityToLoad + lastLoaded > last) {
+  		quantityToLoad = 1;
+  	}
+
+  	if(lastLoaded <= last) {
+  		for(var i = lastLoaded; i < lastLoaded + quantityToLoad; i++) {
+	  		$scope.productsToShow.push($scope.productList[i]);
+	  	}
+	  	lastLoaded = i;
+  	}
   };
 };

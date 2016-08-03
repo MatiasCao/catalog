@@ -13,6 +13,7 @@ function MainCtrl($scope, $location, productFunctions) {
 
 	productFunctions.getCurrentProductList().then(function(response) {
 		$scope.productList = response;
+		$scope.loadMore();
 	})
 
   $scope.reverse = false;

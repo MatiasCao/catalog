@@ -7,6 +7,7 @@ angular
 
 function EditCtrl($scope, $location, productFunctions) {
 	$scope.product = productFunctions.getProductDetail();
+  console.log($scope.product);
 
 	$scope.goBack = function() {
 		$location.path('/dashboard');

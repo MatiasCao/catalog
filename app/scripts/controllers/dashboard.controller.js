@@ -12,13 +12,14 @@ function DashboardCtrl($scope, $location, productFunctions, localStorageService)
     $scope.productList = response;
   })
 
-  $scope.removeProduct = function (productId) {
-    productFunctions.removeProduct(productId);
+  $scope.removeProduct = function (product) {
+    product.selected = true;
+    productFunctions.removeProduct(product.id);
   }
 
-  $scope.restoreProduct = function (productId) {
-    $scope.removedProduct = false;
-    productFunctions.restoreProduct(productId);
+  $scope.restoreProduct = function (product) {
+    product.selected = false;
+    productFunctions.restoreProduct(product.id);
   }
 
   $scope.editProduct = function (product) {

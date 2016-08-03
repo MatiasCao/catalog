@@ -22,6 +22,6 @@ function MainCtrl($scope, $location, productFunctions) {
   $scope.viewDetail = function(product) {
     productFunctions.setProductDetail(product);
     $location.path('/product-detail');
-    
+
   };
 };

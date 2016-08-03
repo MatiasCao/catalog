@@ -12,8 +12,10 @@ function TrashCtrl($scope, productFunctions, localStorageService) {
 
     $scope.trashedProducts = productFunctions.getTrashedProducts();
 
-    $scope.restoreProduct = function (productId) {
-      productFunctions.restoreProduct(productId);
+    //$scope.trashedProducts.product.selected = true;
+    $scope.restoreProduct = function (product) {
+      product.selected = false;
+      productFunctions.restoreProduct(product);
     }
   } else {
     $location.path('/admin');

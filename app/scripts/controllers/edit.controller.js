@@ -6,6 +6,7 @@ angular
 
 
 function EditCtrl($scope, $location, productFunctions) {
+
 	$scope.product = productFunctions.getProductDetail();
 
 	$scope.goBack = function() {
@@ -23,10 +24,32 @@ function EditCtrl($scope, $location, productFunctions) {
 				return true;
 			}
 		}
+		return false;
 	}
 
+	$scope.categories = {
+		men: $scope.checkCategory('men'),
+		women: $scope.checkCategory('women'),
+		jackets: $scope.checkCategory('jackets'),
+		shirts: $scope.checkCategory('shirts'),
+		't-shirts': $scope.checkCategory('t-shirts'),
+		pants: $scope.checkCategory('pants'),
+		accessories: $scope.checkCategory('accessories'),
+		packs: $scope.checkCategory('packs')
+	}
+
+	$scope.changeCategories = function(newCategories) {
+		$scope.product.categories = [];
+		for(var category in newCategories) {
+			if(newCategories[category]) {
+				$scope.product.categories.push(category);
+			}
+		}
+	}
+
+
 	$scope.saveProduct = function() {
-		console.log($scope.product);
+		$scope.changeCategories($scope.categories);
 		productFunctions.editProduct($scope.product);
 		$scope.goBack();
 	}

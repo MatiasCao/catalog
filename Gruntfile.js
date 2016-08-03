@@ -39,10 +39,7 @@ module.exports = function (grunt) {
       },
       js: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
-        tasks: ['newer:jshint:all', 'newer:jscs:all'],
-        options: {
-          livereload: '<%= connect.options.livereload %>'
-        }
+        tasks: ['newer:jshint:all', 'newer:jscs:all']
       },
       jsTest: {
         files: ['test/spec/{,*/}*.js'],
@@ -53,11 +50,14 @@ module.exports = function (grunt) {
         tasks: ['newer:copy:styles', 'postcss']
       },
       gruntfile: {
-        files: ['Gruntfile.js']
+        files: ['Gruntfile.js'],
+        options: {
+          livereload: true
+        }
       },
       livereload: {
         options: {
-          livereload: '<%= connect.options.livereload %>'
+          livereload: true
         },
         files: [
           '<%= yeoman.app %>/{,**/}*.html',

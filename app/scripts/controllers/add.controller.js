@@ -4,10 +4,12 @@ angular
 	.module('catalogApp')
 	.controller('AddCtrl', AddCtrl);
 
+function AddCtrl($scope, $location, productFunctions, localStorageService) {
 
-function AddCtrl($scope, $location, productFunctions) {
+  var userLog = localStorageService.get('logStatus');
+  if (userLog) {
 
-	$scope.product = {
+    $scope.product = {
 		id: productFunctions.getNewProductId(),
 		created: new Date().toJSON(),
 		lastChanged: new Date().toJSON(),
@@ -47,4 +49,8 @@ function AddCtrl($scope, $location, productFunctions) {
 	$scope.goBack = function() {
 		$location.path('/dashboard');
 	}
+  } else {
+    $location.path('/admin');
+  }
+
 }

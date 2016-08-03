@@ -4,10 +4,12 @@ angular
 	.module('catalogApp')
 	.controller('EditCtrl', EditCtrl);
 
+function EditCtrl($scope, $location, productFunctions, localStorageService) {
 
-function EditCtrl($scope, $location, productFunctions) {
+  var userLog = localStorageService.get('logStatus');
+  if (userLog) {
 
-	$scope.product = productFunctions.getProductDetail();
+    $scope.product = productFunctions.getProductDetail();
 
 	$scope.goBack = function() {
 		$location.path('/dashboard');
@@ -53,4 +55,7 @@ function EditCtrl($scope, $location, productFunctions) {
 		productFunctions.editProduct($scope.product);
 		$scope.goBack();
 	}
+  } else {
+    $location.path('/admin');
+  }
 }

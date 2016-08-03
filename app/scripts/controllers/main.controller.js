@@ -23,6 +23,5 @@ function MainCtrl($scope, $location, productFunctions) {
     productFunctions.setProductDetail(product);
     $location.path('/product-detail');
 
-
   };
 };

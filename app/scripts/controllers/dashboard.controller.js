@@ -6,29 +6,37 @@ angular
 
 
 function DashboardCtrl($scope, $location, productFunctions, localStorageService) {
-  $scope.productList;
 
-  productFunctions.getCurrentProductList().then(function (response) {
-    $scope.productList = response;
-  })
+  var userLog = localStorageService.get('logStatus');
+  if (userLog) {
 
-  $scope.removeProduct = function (productId) {
-    productFunctions.removeProduct(productId);
-  }
+    $scope.productList;
 
-  $scope.restoreProduct = function (productId) {
-    $scope.removedProduct = false;
-    productFunctions.restoreProduct(productId);
-  }
+    productFunctions.getCurrentProductList().then(function (response) {
+      $scope.productList = response;
+    })
 
-  $scope.editProduct = function (product) {
-    productFunctions.setProductDetail(product);
-    $location.path('/dashboard/edit');
-  }
+    $scope.removeProduct = function (product) {
+      product.selected = true;
+      productFunctions.removeProduct(product.id);
+    }
 
-  $scope.logOut = function () {
+    $scope.restoreProduct = function (product) {
+      product.selected = false;
+      productFunctions.restoreProduct(product.id);
+    }
+
+    $scope.editProduct = function (product) {
+      productFunctions.setProductDetail(product);
+      $location.path('/dashboard/edit');
+    }
+
+    $scope.logOut = function () {
+      $location.path('/admin');
+      localStorageService.remove('logStatus');
+    }
+  } else {
     $location.path('/admin');
-    localStorageService.remove('logStatus');
   }
 
 }

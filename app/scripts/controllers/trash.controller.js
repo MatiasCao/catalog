@@ -5,12 +5,20 @@ angular
 .controller('TrashCtrl', TrashCtrl);
 
 
-function TrashCtrl($scope, productFunctions) {
+function TrashCtrl($scope, productFunctions, localStorageService) {
 
-  $scope.trashedProducts = productFunctions.getTrashedProducts();
+  var userLog = localStorageService.get('logStatus');
+  if (userLog) {
 
-  $scope.restoreProduct = function (productId) {
-    productFunctions.restoreProduct(productId);
+    $scope.trashedProducts = productFunctions.getTrashedProducts();
+
+    //$scope.trashedProducts.product.selected = true;
+    $scope.restoreProduct = function (product) {
+      product.selected = false;
+      productFunctions.restoreProduct(product);
+    }
+  } else {
+    $location.path('/admin');
   }
 
 };

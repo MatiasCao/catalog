@@ -16,7 +16,6 @@ function productFunctions($http, $q) {
 
   var services = {
     getProducts: getProducts,
-    getTrash: getTrash,
     addProduct: addProduct,
     editProduct: editProduct,
     removeProduct: removeProduct,
@@ -35,10 +34,6 @@ function productFunctions($http, $q) {
     return $http.get('../../data/original.json');
   }
 
-  function getTrash() {
-
-  }
-
   function addProduct(product) {
   	currentProductList.unshift(product);
   }
@@ -55,19 +50,19 @@ function productFunctions($http, $q) {
   function removeProduct(productId) {
     for (var i = 0; i < currentProductList.length; i++) {
       if (currentProductList[i].id === productId) {
-        var deleted = currentProductList.splice(i, 1);
+        var deleted = currentProductList[i];
+        currentProductList.splice(i, 1);
         trashedProducts.push(deleted);
-        console.log(trashedProducts);
       }
     }
   }
 
-  function restoreProduct(productId) {
+  function restoreProduct(product) {
     for (var i = 0; i < trashedProducts.length; i++) {
-      if (trashedProducts[i].id === productId) {
-        var restored = trashedProducts.splice(i, 1);
+      if (trashedProducts[i].id === product.id) {
+        var restored = trashedProducts[i];
+        trashedProducts.splice(i, 1);
         currentProductList.unshift(restored);
-        console.log(trashedProducts);
       }
     }
   }

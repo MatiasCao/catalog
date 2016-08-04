@@ -22,6 +22,7 @@ function MainCtrl($scope, $location, productFunctions) {
     if (item === 'all') {
       productFunctions.getCurrentProductList().then(function (response) {
         $scope.productList = response;
+        resetLazyLoad();
       });
     } else {
       productFunctions.getCurrentProductList().then(function (response) {
@@ -35,6 +36,7 @@ function MainCtrl($scope, $location, productFunctions) {
           }
         }
         $scope.productList = filterItems;
+        resetLazyLoad();
       });
     }
   };
@@ -66,4 +68,12 @@ function MainCtrl($scope, $location, productFunctions) {
 	  	lastLoaded = i;
   	}
   };
+
+  var resetLazyLoad = function() {
+  	console.log($scope.productList);
+  	$scope.productsToShow = [];
+  	lastLoaded = 0;
+  	$scope.loadMore();
+  } 
+
 };

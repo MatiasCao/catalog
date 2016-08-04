@@ -58,7 +58,7 @@ function MainCtrl($scope, $location, productFunctions) {
   	var quantityToLoad = 8;
 
   	if(quantityToLoad + lastLoaded > last) {
-  		quantityToLoad = 1;
+  		quantityToLoad = last - lastLoaded + 1;
   	}
 
   	if(lastLoaded <= last) {
@@ -70,7 +70,6 @@ function MainCtrl($scope, $location, productFunctions) {
   };
 
   var resetLazyLoad = function() {
-  	console.log($scope.productList);
   	$scope.productsToShow = [];
   	lastLoaded = 0;
   	$scope.loadMore();

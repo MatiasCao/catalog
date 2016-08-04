@@ -1,25 +1,22 @@
 <div class="product-detail-prev-btn text-center pull-left">
-  <span class="glyphicon glyphicon-chevron-left" ng-click="prevProduct()"></span>
+    <span class="glyphicon glyphicon-chevron-left" ng-click="prevProduct()"></span>
 </div>
-
 <div class="product-detail row center-block">
-  <div class="product-detail-img col-lg-6 col-md-6 col-sm-12 col-xs-12">
-    <span class="product-detail-back-btn glyphicon glyphicon-circle-arrow-left" ng-click="goBack()"></span>
-    <img class="img-responsive" src="{{ product.image }}" alt="{{ product.title }}">
-  </div>
-
-  <div class="product-detail-text col-lg-6 col-md-6 col-sm-12 col-xs-12">
-    <div class="product-detail-text-content">  
-      <h1 class="product-detail-title">{{ product.title }}</h1>
-      <p class="product-detail-price">{{ product.price | currency}}</p>
-      <p class="product-detail-description">{{ product.description }}</p>
-      <div class="product-detail-categories">
-        <span class="label label-primary" ng-repeat="category in product.categories">{{ category }}</span>
-      </div>
+    <div class="product-detail-img col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <span class="product-detail-back-btn glyphicon glyphicon-circle-arrow-left" ng-click="goBack()"></span>
+        <img class="img-responsive" src="{{ product.image }}" alt="{{ product.title }}">
     </div>
-  </div>
+    <div class="product-detail-text col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div class="product-detail-text-content">
+            <h1 class="product-detail-title">{{ product.title }}</h1>
+            <p class="product-detail-price">{{ product.price | currency}}</p>
+            <p class="product-detail-description">{{ product.description }}</p>
+            <div class="product-detail-categories">
+                <span class="label label-primary" ng-repeat="category in product.categories">{{ category }}</span>
+            </div>
+        </div>
+    </div>
 </div>
-
 <div class="product-detail-next-btn text-center pull-right">
-  <span class="glyphicon glyphicon-chevron-right" ng-click="nextProduct()"></span>
+    <span class="glyphicon glyphicon-chevron-right" ng-click="nextProduct()"></span>
 </div>

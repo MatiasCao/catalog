@@ -14,7 +14,7 @@ function loadImage() {
     return directive;
 
     function link(scope, element, attrs) {
-        
+
         element.bind('change', function(event) {
             var files = event.target.files;
             $('#product-img').attr('src', 'images/' + files[0].name);

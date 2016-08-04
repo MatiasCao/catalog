@@ -1,45 +1,44 @@
 <div class=" navbar-collapse" id="js-navbar-collapse">
-  <div class="col-md-6">
-    <ol class="breadcrumb pull-left gender-filter">
-      <li ng-click="filterItemsBy('all')" >All</li>
-      <li ng-click="filterItemsBy('men')"><a>Men</a></li>
-      <li ng-click="filterItemsBy('women')"><a>Women</a></li>
-    </ol>
-    <ol class="breadcrumb pull-left category-filter">
-      <li ng-click="filterItemsBy('all')">All</li>
-      <li ng-click="filterItemsBy('jackets')"><a>Jackets</a></li>
-      <li  ng-click="filterItemsBy('shirts')"><a>Shirts</a></li>
-      <li  ng-click="filterItemsBy('t-shirts')"><a>T-shirts</a></li>
-      <li  ng-click="filterItemsBy('pants')"><a>Pants</a></li>
-      <li  ng-click="filterItemsBy('accessories')"><a>Accessories</a></li>
-      <li  ng-click="filterItemsBy('packs')"><a>Packs</a></li>
-    </ol>
-  </div>
-  <div class="pull-right">
-    <ul class="nav navbar-nav">
-      <li>
-        <a class="" href="#/" ng-click="sortBy('title')"><span class="glyphicon glyphicon-resize-vertical"
-                                                               aria-hidden="true"></span> A / Z</a>
-      </li>
-      <li>
-        <a class="" href="#/" ng-click="sortBy('price')"><span class="glyphicon glyphicon-resize-vertical"
-                                                               aria-hidden="true"></span> Price</a>
-      </li>
-      <li>
-        <a class="" href="#/" ng-click="sortBy('created')"><span class="glyphicon glyphicon-resize-vertical"
-                                                                 aria-hidden="true"></span> Date</a>
-      </li>
-    </ul>
-  </div>
-</div>
-
-<div class="row" infinite-scroll='loadMore()' infinite-scroll-distance='2'>
-  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" ng-repeat="product in productsToShow | orderBy:propertyName:reverse | filter:searchProducts ">
-    <div class="product-card text-center center-block" ng-click="viewDetail(product)">
-      <img class="product-card-img img-responsive" ng-src="{{ product.image }}" alt="{{ product.title }}">
-      <span class="product-card-more glyphicon glyphicon-plus"></span>
-      <p class="product-card-price">${{ product.price }}</p>
-      <h2 class="product-card-title">{{ product.title }}</h2>
+    <div class="col-md-6">
+        <ol class="breadcrumb pull-left gender-filter">
+            <li ng-click="filterItemsBy('all')">All</li>
+            <li ng-click="filterItemsBy('men')"><a>Men</a></li>
+            <li ng-click="filterItemsBy('women')"><a>Women</a></li>
+        </ol>
+        <ol class="breadcrumb pull-left category-filter">
+            <li ng-click="filterItemsBy('all')">All</li>
+            <li ng-click="filterItemsBy('jackets')"><a>Jackets</a></li>
+            <li ng-click="filterItemsBy('shirts')"><a>Shirts</a></li>
+            <li ng-click="filterItemsBy('t-shirts')"><a>T-shirts</a></li>
+            <li ng-click="filterItemsBy('pants')"><a>Pants</a></li>
+            <li ng-click="filterItemsBy('accessories')"><a>Accessories</a></li>
+            <li ng-click="filterItemsBy('packs')"><a>Packs</a></li>
+        </ol>
     </div>
-  </div>
+    <div class="pull-right">
+        <ul class="nav navbar-nav">
+            <li>
+                <a class="" href="#/" ng-click="sortBy('title')"><span class="glyphicon glyphicon-resize-vertical"
+                                                               aria-hidden="true"></span> A / Z</a>
+            </li>
+            <li>
+                <a class="" href="#/" ng-click="sortBy('price')"><span class="glyphicon glyphicon-resize-vertical"
+                                                               aria-hidden="true"></span> Price</a>
+            </li>
+            <li>
+                <a class="" href="#/" ng-click="sortBy('created')"><span class="glyphicon glyphicon-resize-vertical"
+                                                                 aria-hidden="true"></span> Date</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="row" infinite-scroll='loadMore()' infinite-scroll-distance='2'>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" ng-repeat="product in productsToShow | orderBy:propertyName:reverse | filter:searchProducts ">
+        <div class="product-card text-center center-block" ng-click="viewDetail(product)">
+            <img class="product-card-img img-responsive" ng-src="{{ product.image }}" alt="{{ product.title }}">
+            <span class="product-card-more glyphicon glyphicon-plus"></span>
+            <p class="product-card-price">${{ product.price }}</p>
+            <h2 class="product-card-title">{{ product.title }}</h2>
+        </div>
+    </div>
 </div>

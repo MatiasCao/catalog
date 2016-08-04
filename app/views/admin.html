@@ -6,7 +6,7 @@
         <label class="col-md-12">Username</label>
         <div class="col-md-12">
           <input type="text" class="form-control" name="inputUser" placeholder="Username" ng-model="user.name">
-          <span ng-show="enterData" class="error" >*Ingrese datos validos</span>
+          <span ng-show="enterDataUser" class="error" >*Wrong User</span>
         </div>
       </div>
       <div class="form-group">
@@ -14,10 +14,11 @@
         <div class="col-md-12">
           <input type="password" class="form-control" name="inputPassword" placeholder="Password"
                  ng-model="user.password" >
-          <span ng-show="enterData"  class="error">*Ingrese datos validos</span>
+          <span ng-show="enterDataPassword"  class="error">*Wrong Password</span>
         </div>
 
       </div>
+      <span ng-show="enterDataTotal"  class="error">*Please fill the inputs field before</span>
       <!--div class="checkbox">
         <label>
           <input type="checkbox" ng-model="user.keeplog"> Remember me

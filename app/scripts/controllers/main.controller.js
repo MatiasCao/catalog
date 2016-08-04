@@ -13,6 +13,7 @@ function MainCtrl($scope, $location, productFunctions) {
 
   productFunctions.getCurrentProductList().then(function (response) {
     $scope.productList = response;
+    productFunctions.setCurrentFilteredProductList($scope.productList);
     $scope.loadMore();
   });
 
@@ -22,6 +23,7 @@ function MainCtrl($scope, $location, productFunctions) {
     if (item === 'all') {
       productFunctions.getCurrentProductList().then(function (response) {
         $scope.productList = response;
+        productFunctions.setCurrentFilteredProductList($scope.productList);
         resetLazyLoad();
       });
     } else {
@@ -36,6 +38,7 @@ function MainCtrl($scope, $location, productFunctions) {
           }
         }
         $scope.productList = filterItems;
+        productFunctions.setCurrentFilteredProductList($scope.productList);
         resetLazyLoad();
       });
     }

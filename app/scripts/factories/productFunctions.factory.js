@@ -9,6 +9,7 @@ function productFunctions($http, $q) {
   var productDetail;
   var currentProductList = getProducts();
   var trashedProducts = [];
+  var currentFilteredProductList = [];
 
   $http.get('../../data/original.json').then(function (response) {
     currentProductList = response.data;
@@ -25,7 +26,9 @@ function productFunctions($http, $q) {
     getCurrentProductList: getCurrentProductList,
     getProductById: getProductById,
     getTrashedProducts: getTrashedProduct,
-    getNewProductId: getNewProductId
+    getNewProductId: getNewProductId,
+    setCurrentFilteredProductList: setCurrentFilteredProductList,
+    getCurrentFilteredProductList: getCurrentFilteredProductList
   };
 
   return services;
@@ -101,6 +104,17 @@ function productFunctions($http, $q) {
       }
     }
     return max + 1;
+  }
+
+  function setCurrentFilteredProductList(products) {
+  	currentFilteredProductList = [];
+  	for(var i = 0; i < products.length; i++) {
+  		currentFilteredProductList.push(products[i].id);
+  	}
+  }
+
+  function getCurrentFilteredProductList() {
+  	return currentFilteredProductList;
   }
 }
 
